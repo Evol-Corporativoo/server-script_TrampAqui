@@ -8,8 +8,7 @@
 
     $usuario = new Usuario();
     $json = file_get_contents('php://input');
-    //$data = json_decode($json);
-    $data = ['gu@gmail.com','1234678'];
+    $data = json_decode($json);
     $campo = 0;
 
     if(filter_var($data[0], FILTER_VALIDATE_EMAIL)){

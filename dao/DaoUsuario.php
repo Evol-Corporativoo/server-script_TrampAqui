@@ -59,18 +59,19 @@
 
             $conexao = Conexao::conectar();
             if($campo == 0){
-                $select = 'SELECT nomeUsuario, cpfUsuario, telefoneUsuario, dataNascUsuario, emailUsuario, senhaUsuario FROM tbUsuario
-                           WHERE (emailUsuario LIKE ? AND senhaUsuario LIKE ?)';
+                $select = 'SELECT * FROM tbUsuario
+                       WHERE (emailUsuario LIKE ? AND senhaUsuario LIKE ?)';
                 $prepare = $conexao->prepare($select);
                 $prepare->bindValue(1, $usuario->getEmail());
                 $prepare->bindValue(2, $usuario->getSenha());
             } else {
-                $select = 'SELECT idUsuario, nomeUsuario, cpfUsuario, telefoneUsuario, dataNascUsuario, emailUsuario, senhaUsuario FROM tbUsuario
-                           WHERE (cpfUsuario LIKE ? AND senhaUsuario LIKE ?)';
+                $select = 'SELECT * FROM tbUsuario
+                       WHERE (cpfUsuario LIKE ? AND senhaUsuario LIKE ?)';
                 $prepare = $conexao->prepare($select);
                 $prepare->bindValue(1, $usuario->getCpf());
                 $prepare->bindValue(2, $usuario->getSenha());
             }
+            $prepare->execute();
             $lista = $prepare->fetch(PDO::FETCH_ASSOC);
             $novo = new Usuario();
             $novo->setId($lista['idUsuario']);
