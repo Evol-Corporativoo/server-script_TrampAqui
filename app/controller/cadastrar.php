@@ -1,5 +1,8 @@
 <?php
 
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Headers: Content-Type");
+
     use app\model\Usuario;
     use app\dao\DaoUsuario;
 
@@ -14,6 +17,7 @@
     $usuario->setSenha($data[3]);
     $usuario->setTelefone($data[4]);
 
-    DaoUsuario::cadastrar($usuario);
+    $cadastrou = DaoUsuario::cadastrar($usuario);
+    echo json_encode($cadastrou);
 
 ?>

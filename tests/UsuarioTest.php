@@ -14,6 +14,20 @@
             $this->assertEquals('Gustavo de Souza Costa Joia',$dados['nome']);
         }
 
+        public function testSignin(){
+            $u = new Usuario();
+            $data = ['Gugu','48059265890','joia@gmail.com','1234','12345678','30/05/2005'];
+            $u->setNome($data[0]);
+            $u->setCpf($data[1]);
+            $u->setDataNasc($data[5]);
+            $u->setEmail($data[2]);
+            $u->setSenha($data[3]);
+            $u->setTelefone($data[4]);
+            $registrou = DaoUsuario::cadastrar($u);
+            $this->assertTrue($registrou);
+            
+        }
+
     }
 
 ?>
