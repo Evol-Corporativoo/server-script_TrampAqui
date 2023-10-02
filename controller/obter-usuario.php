@@ -4,8 +4,8 @@
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: Content-Type");
 
-    require_once('../model/Usuario.php');
-    require_once('../dao/DaoUsuario.php');
+    use dao\DaoUsuario;
+    use model\Usuario;
 
     $usuario = new Usuario();
     $json = file_get_contents('php://input');

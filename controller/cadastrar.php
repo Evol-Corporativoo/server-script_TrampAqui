@@ -1,7 +1,7 @@
 <?php
 
-    require_once('../model/Usuario.php');
-    require_once('../dao/DaoUsuario.php');
+    use model\Usuario;
+    use dao\DaoUsuario;
 
     $json = file_get_contents('php://input');
     $data = json_decode($json);

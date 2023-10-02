@@ -3,7 +3,7 @@
     "description": "Testes unitários, TCC",
     "autoload": {
         "psr-4": {
-            "app\\": "model/"
+            "model\\": "model/"
         }
     },
     "autoload-dev": {

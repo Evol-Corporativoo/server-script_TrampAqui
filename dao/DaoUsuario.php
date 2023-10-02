@@ -1,7 +1,10 @@
 <?php
 
+    namespace dao;
+
     use model\Usuario;
     use model\Conexao;
+    use \PDO;
 
     class DaoUsuario{
 
