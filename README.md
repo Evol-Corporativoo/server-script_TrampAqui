@@ -1,5 +1,4 @@
 ```sh
-composer init
 composer exec -n
 composer dump-autoload -o
 composer require --dev phpunit/phpunit
