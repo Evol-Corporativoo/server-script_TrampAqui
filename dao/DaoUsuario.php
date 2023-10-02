@@ -1,11 +1,11 @@
 <?php
 
-    require_once('../model/Conexao.php');
-    require_once('../model/Usuario.php');
+    use model\Usuario;
+    use model\Conexao;
 
     class DaoUsuario{
 
-        public static function cadastrar(Usuario $usuario){
+        public static function cadastrar($usuario){
 
             $conexao = Conexao::conectar();
             $insert = 'INSERT INTO tbUsuario(nomeUsuario, cpfUsuario, emailUsuario, telefoneUsuario, dataNascUsuario, senhaUsuario)
@@ -24,7 +24,7 @@
 
         }
 
-        public static function logar(Usuario $usuario, $campo){
+        public static function logar($usuario, $campo){
 
             $conexao = Conexao::conectar();
 
@@ -55,7 +55,7 @@
 
         }
 
-        public static function buscar(Usuario $usuario, $campo){
+        public static function buscar($usuario, $campo){
 
             $conexao = Conexao::conectar();
             if($campo == 0){

@@ -1,0 +1,24 @@
+{
+    "name": "guhst/server",
+    "description": "Testes unitários, TCC",
+    "autoload": {
+        "psr-4": {
+            "app\\": "model/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gustavo S. C. Joia",
+            "email": "gustavo.joia57@gmail.com"
+        }
+    ],
+    "phpunit/php-code-coverage": "^4.0.3",
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    }
+}
