@@ -915,6 +915,7 @@ return array(
     'TheSeer\\Tokenizer\\TokenCollectionException' => $vendorDir . '/theseer/tokenizer/src/TokenCollectionException.php',
     'TheSeer\\Tokenizer\\Tokenizer' => $vendorDir . '/theseer/tokenizer/src/Tokenizer.php',
     'TheSeer\\Tokenizer\\XMLSerializer' => $vendorDir . '/theseer/tokenizer/src/XMLSerializer.php',
-    'model\\Conexao' => $baseDir . '/model/Conexao.php',
-    'model\\Usuario' => $baseDir . '/model/Usuario.php',
+    'app\\dao\\DaoUsuario' => $baseDir . '/app/dao/DaoUsuario.php',
+    'app\\model\\Conexao' => $baseDir . '/app/model/Conexao.php',
+    'app\\model\\Usuario' => $baseDir . '/app/model/Usuario.php',
 );

@@ -4,8 +4,8 @@
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: Content-Type");
 
-    use dao\DaoUsuario;
-    use model\Usuario;
+    use app\dao\DaoUsuario;
+    use app\model\Usuario;
 
     $usuario = new Usuario();
     $json = file_get_contents('php://input');

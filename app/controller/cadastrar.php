@@ -1,7 +1,7 @@
 <?php
 
-    use model\Usuario;
-    use dao\DaoUsuario;
+    use app\model\Usuario;
+    use app\dao\DaoUsuario;
 
     $json = file_get_contents('php://input');
     $data = json_decode($json);

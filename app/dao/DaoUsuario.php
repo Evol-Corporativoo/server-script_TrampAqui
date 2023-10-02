@@ -1,9 +1,9 @@
 <?php
 
-    namespace dao;
+    namespace app\dao;
 
-    use model\Usuario;
-    use model\Conexao;
+    use app\model\Usuario;
+    use app\model\Conexao;
     use \PDO;
 
     class DaoUsuario{

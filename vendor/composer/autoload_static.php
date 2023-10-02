@@ -16,9 +16,9 @@ class ComposerStaticInit67eb1a2ee78eea835e4fe98c33b7d436
         array (
             'tests\\' => 6,
         ),
-        'm' => 
+        'a' => 
         array (
-            'model\\' => 6,
+            'app\\' => 4,
         ),
         'P' => 
         array (
@@ -36,9 +36,9 @@ class ComposerStaticInit67eb1a2ee78eea835e4fe98c33b7d436
         array (
             0 => __DIR__ . '/../..' . '/tests',
         ),
-        'model\\' => 
+        'app\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/model',
+            0 => __DIR__ . '/../..' . '/app',
         ),
         'PhpParser\\' => 
         array (
@@ -964,8 +964,9 @@ class ComposerStaticInit67eb1a2ee78eea835e4fe98c33b7d436
         'TheSeer\\Tokenizer\\TokenCollectionException' => __DIR__ . '/..' . '/theseer/tokenizer/src/TokenCollectionException.php',
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
-        'model\\Conexao' => __DIR__ . '/../..' . '/model/Conexao.php',
-        'model\\Usuario' => __DIR__ . '/../..' . '/model/Usuario.php',
+        'app\\dao\\DaoUsuario' => __DIR__ . '/../..' . '/app/dao/DaoUsuario.php',
+        'app\\model\\Conexao' => __DIR__ . '/../..' . '/app/model/Conexao.php',
+        'app\\model\\Usuario' => __DIR__ . '/../..' . '/app/model/Usuario.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
