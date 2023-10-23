@@ -5,7 +5,7 @@
 
     class DaoUsuario{
 
-        public static function cadastrar($usuario){
+        public static function cadastrar(Usuario $usuario){
 
             $conexao = Conexao::conectar();
             $insert = 'INSERT INTO tbUsuario(nomeUsuario, cpfUsuario, emailUsuario, telefoneUsuario, dataNascUsuario, senhaUsuario)
@@ -24,22 +24,24 @@
 
         }
 
-        public static function logar($usuario, $campo){
+        public static function logar(Usuario $usuario, $campo){
 
             $conexao = Conexao::conectar();
 
             if($campo == 0){
                 $select = 'SELECT COUNT(idUsuario) AS contagem FROM tbUsuario
-                       WHERE (emailUsuario LIKE ? AND senhaUsuario LIKE ?)';
+                       WHERE (emailUsuario = ?)';
                 $prepare = $conexao->prepare($select);
                 $prepare->bindValue(1, $usuario->getEmail());
-                $prepare->bindValue(2, $usuario->getSenha());
+                $data = 'SELECT * from tbUsuario WHERE emailUsuario = ?';
+                $p = $conexao->prepare($data);
             } else {
                 $select = 'SELECT COUNT(idUsuario) AS contagem FROM tbUsuario
-                       WHERE (cpfUsuario LIKE ? AND senhaUsuario LIKE ?)';
+                       WHERE (cpfUsuario = ?)';
                 $prepare = $conexao->prepare($select);
                 $prepare->bindValue(1, $usuario->getCpf());
-                $prepare->bindValue(2, $usuario->getSenha());
+                $data = 'SELECT * from tbUsuario WHERE cpfUsuario = ?';
+                $p = $conexao->prepare($data);
             }
 
             $prepare->execute();
@@ -48,7 +50,11 @@
             $contagem = $lista['contagem'];
 
             if($contagem >= 1){
-                return [true];
+                $p->execute();
+                $array_p = $p->fetch(PDO::FETCH_ASSOC);
+                if(password_verify($usuario->getSenha(),$array_p['senhaUsuario'])){
+                    return [true, $array_p];
+                }
             } else {
                 return [false];
             }
