@@ -3,12 +3,13 @@
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: Content-Type");
 
-    use app\dao\DaoUsuario;
-    use app\model\Usuario;
+    require_once('../dao/DaoUsuario.php');
+    require_once('../model/Usuario.php');
 
     $usuario = new Usuario();
     $json = file_get_contents('php://input');
-    $data = json_decode($json);
+    //$data = json_decode($json);
+    $data = ['gugu@joia.com',1234];
     $campo = 0;
 
     if(filter_var($data[0], FILTER_VALIDATE_EMAIL)){

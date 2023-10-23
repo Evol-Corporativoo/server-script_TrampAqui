@@ -3,8 +3,8 @@
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: Content-Type");
 
-    use app\model\Usuario;
-    use app\dao\DaoUsuario;
+    require_once('../dao/DaoUsuario.php');
+    require_once('../model/Usuario.php');
 
     $json = file_get_contents('php://input');
     $data = json_decode($json);

@@ -1,7 +1,5 @@
 <?php
 
-    namespace app\model;
-    use \PDO;
     class Conexao{
 
         public static function conectar(){

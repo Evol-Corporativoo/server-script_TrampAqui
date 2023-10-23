@@ -1,10 +1,7 @@
 <?php
 
-    namespace app\dao;
-
-    use app\model\Usuario;
-    use app\model\Conexao;
-    use \PDO;
+    require_once('../model/Usuario.php');
+    require_once('../model/Conexao.php');
 
     class DaoUsuario{
 
@@ -16,10 +13,10 @@
             $prepare = $conexao->prepare($insert);
             $prepare->bindValue(1, $usuario->getNome());
             $prepare->bindValue(2, $usuario->getCpf());
-            $prepare->bindValue(5, $usuario->getDataNasc());
             $prepare->bindValue(3, $usuario->getEmail());
-            $prepare->bindValue(6, $usuario->getSenha());
             $prepare->bindValue(4, $usuario->getTelefone());
+            $prepare->bindValue(5, $usuario->getDataNasc());
+            $prepare->bindValue(6, password_hash($usuario->getSenha(),PASSWORD_DEFAULT));
 
             $prepare->execute();
 
